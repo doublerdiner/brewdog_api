@@ -1,9 +1,11 @@
 import './App.css';
+import Brewdog from './containers/Brewdog.js';
+
 
 function App() {
   return (
     <div className="App">
-      <h1>hello</h1>
+      <Brewdog/>
     </div>
   );
 }
