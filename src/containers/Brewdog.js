@@ -19,6 +19,8 @@ const Brewdog = ()=>{
     function addFavourite (beer){
         const newFavourites = [...favourites, beer];
         setFavourites(newFavourites);
+        // let i = document.getElementById([beer.name])
+        // i.style.background = "gold";
     };
 
     function removeFavourite (beerToRemove){
@@ -26,6 +28,9 @@ const Brewdog = ()=>{
             return beer !== beerToRemove;
         })
         setFavourites(newFavourites);
+        // let i = document.getElementById([beerToRemove.name])
+        // i.style.background = "red";
+
     }
 
     return(

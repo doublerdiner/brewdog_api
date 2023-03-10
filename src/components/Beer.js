@@ -31,29 +31,16 @@ const Beer = ({beer, addFavourite, removeFavourite, favourites})=>{
 
 
     const favClick = ()=>{
-        console.log(beer)
-        
-        
-        
-        
-        // let i = document.getElementById([beer.name])
-        // if (i.style.background == "gold"){
-            //     i.style.background = "none";
-            // } else {
-                //     i.style.background = "gold";
-                // };
                 const names = favourites.map((beer)=>{
                     return beer.name
-                    
                 })
                 
+                let i = document.getElementById([beer.name])
                 if (names.includes(beer.name)){
                     removeFavourite(beer)
                 } else {
                     addFavourite(beer)
                 };
-                checkColor(beer);
-        // let i = document.getElementById([beer.name])
         // if (i.style.background != "gold"){
         // i.style.background = "gold";
         // } else {
@@ -62,17 +49,17 @@ const Beer = ({beer, addFavourite, removeFavourite, favourites})=>{
 
     };
 
-    const checkColor = (name)=>{
+    const listFavourites = (beer)=>{
         const names = favourites.map((beer)=>{
-            return beer.name})
-            
-        console.log(document.getElementById([name.name]))
-            
-        let i = document.getElementById([name.name])
-        if (names.includes(name.name)){
-            i.style.background = "none";
-        } else{
-            i.style.background = "gold";
+            return beer.name
+        })
+
+        if (names.includes(beer.name)){
+            console.log("true")
+            return true
+        } else {
+            console.log("false")
+            return false
         }
     }
 
@@ -87,7 +74,9 @@ const Beer = ({beer, addFavourite, removeFavourite, favourites})=>{
                 <p>Ingredients:</p>
                 {ingredientList}
             </div>
-            <button id={beer.name} className="fav" onClick={favClick}>Favourite</button>
+                {listFavourites(beer) ? <button id={beer.name} className="fav" onClick={favClick}>Favourites
+                </button> : <button id={beer.name} className="all" onClick={favClick}>Favourites
+                </button>}
         </div>
     )
 };

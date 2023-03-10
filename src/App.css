@@ -64,7 +64,7 @@ img{
 }
 
 .fav{
-  background: none;
+  background: gold;
 }
 
 #favourites{
@@ -72,9 +72,9 @@ img{
 }
 
 .gold{
-  background-color: gold;
+  background: gold;
 }
 
-.red{
-  background-color: red;
+.all{
+  background: none;
 }
